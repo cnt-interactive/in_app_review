@@ -10,11 +10,12 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.google.android.gms.common.api.Result;
+
 import com.google.android.gms.tasks.Task;
 import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
+
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
@@ -22,6 +23,7 @@ import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
+import io.flutter.plugin.common.MethodChannel.Result;
 
 /**
  * InAppReviewPlugin
@@ -114,6 +116,7 @@ public class InAppReviewPlugin implements FlutterPlugin, MethodCallHandler, Acti
             Log.i(TAG, "isAvailable: The Play Store is available and Android 5 or later is being used");
             cacheReviewInfo(result);
         }
+
     }
 
     private void cacheReviewInfo(final Result result) {
